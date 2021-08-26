@@ -144,7 +144,7 @@ private void initialize() {
 
       public void actionPerformed(ActionEvent e) {
       	 //dispose();
-           UserRegister ur = new UserRegister();
+           UserRegistration ur = new UserRegistration();
            ur.setVisible(true);
 
          
