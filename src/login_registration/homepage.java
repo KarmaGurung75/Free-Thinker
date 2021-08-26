@@ -87,7 +87,7 @@ public class homepage {
 
             public void actionPerformed(ActionEvent e) {
             	
-                 loginn ln = new loginn();      
+                 Loginn ln = new Loginn();      
                  ln.setVisible(true);
 
                 dispose_home();
