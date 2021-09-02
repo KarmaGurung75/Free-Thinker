@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class Loginn {
+public class Teacher_login {
 	private JFrame loginframe;
 	private JTextField username;
 	private JPasswordField password_txt;
@@ -23,7 +23,7 @@ public class Loginn {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
           try {
-              Loginn window = new Loginn();
+        	  Teacher_login window = new Teacher_login();
               window.loginframe.setVisible(true);
           } catch (Exception e) {
               e.printStackTrace();
@@ -36,7 +36,7 @@ public class Loginn {
 * Create the application.
 */
 
-public Loginn() {
+public Teacher_login() {
   initialize();
 }
 /**
@@ -75,6 +75,13 @@ private void initialize() {
   lblusername.setFont(new Font("Arial", Font.BOLD, 14));
 
 
+  /*
+  JPanel panel_2 = new JPanel();
+  panel_2.setBounds(44, 90, 96, 26);
+  loginframe.getContentPane().add(panel_2);
+  panel_2.setLayout(null);
+  */
+  
   JLabel lblpassword = new JLabel("PASSWORD");
   lblpassword.setBounds(10, 130, 96, 26);
   loginframe.add(lblpassword);
@@ -103,13 +110,12 @@ private void initialize() {
   btnregister.setFont(new Font("Arial", Font.BOLD,12));
   btnregister.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-      	 //dispose();
            UserRegistration ur = new UserRegistration();
            ur.setVisible(true);
-           dispose_loginn();
+           dispose_Teacher_login();
       }
 
-	private void dispose_loginn() {
+	private void dispose_Teacher_login() {
 		// TODO Auto-generated method stub
 		setVisible(false);
 		loginframe.dispose();
@@ -135,16 +141,16 @@ private void initialize() {
            try {
                Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/login_n_register","root","karma16502@");
                PreparedStatement st = (PreparedStatement) connection
-                   .prepareStatement("Select user_name, password,Sector from registration where user_name=? and password=? and Sector='Admin'");
+                   .prepareStatement("Select user_name, password,Sector from registration where user_name=? and password=? and Sector='Teacher'");
 
                st.setString(1, userName);
                st.setString(2, password);
                ResultSet rs = st.executeQuery();
                if (rs.next()) {
             	   JOptionPane.showMessageDialog(btnlogin, "You have successfully logged in");
-              		 Admin ad= new Admin();
-              		 ad.AdminScreen();
-              		 dispose_loginn();     	        
+              		 Teacher TR= new Teacher();
+              		 TR.setVisible(true);
+              		 dispose_Teacher_login();     	        
                }
                else {
                    JOptionPane.showMessageDialog(btnlogin, "Wrong Username & Password");
@@ -154,7 +160,7 @@ private void initialize() {
            }
        }
   	 }
-		private void dispose_loginn() {
+		private void  dispose_Teacher_login() {
 			// TODO Auto-generated method stub
 			setVisible(false);
 			loginframe.dispose();		
@@ -206,4 +212,5 @@ private void initialize() {
 				// TODO Auto-generated method stub
 				
 			}
+
 }
