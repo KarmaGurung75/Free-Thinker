@@ -48,6 +48,7 @@ public class Admin {
 		adminframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		adminframe.getContentPane().setLayout(null);
 		
+		// Sector Page Button
 		btnhome = new JButton("");
 		btnhome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
