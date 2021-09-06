@@ -75,7 +75,7 @@ public class sector {
 		frame.getContentPane().add(teacher);
 		
 		JButton btnadmin = new JButton("");
-		btnadmin.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\admin.jpg"));
+		btnadmin.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\admin.png"));
 		btnadmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			    Loginn Ln= new Loginn();
@@ -96,7 +96,7 @@ public class sector {
 		frame.getContentPane().add(btnadmin);
 		
 		JButton btnteacher = new JButton("");
-		btnteacher.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\teacher.jpg"));
+		btnteacher.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\teacher.png"));
 		btnteacher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Teacher_login Tl = new Teacher_login();
@@ -117,7 +117,7 @@ public class sector {
 		frame.getContentPane().add(btnteacher);
 		
 		JButton btnstudent = new JButton("");
-		btnstudent.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\student.jpg"));
+		btnstudent.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\student.png"));
 		btnstudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Student_login St = new Student_login();
@@ -152,7 +152,7 @@ public class sector {
 		
 		
 		JLabel lblpage = new JLabel("");
-		lblpage.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\BG.png"));
+		lblpage.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\cover1.png"));
 		lblpage.setBounds(0, 0, 623, 441);
 		frame.getContentPane().add(lblpage);
 	}

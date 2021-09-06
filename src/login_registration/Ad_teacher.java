@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import java.awt.Font;
@@ -13,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import java.sql.*;
 
 public class Ad_teacher {
 
@@ -29,7 +33,7 @@ public class Ad_teacher {
 	/**
 	 * Launch the application.
 	 */
-	public static void Admin_TeacherScreen() {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -82,9 +86,14 @@ public class Ad_teacher {
 		frame.getContentPane().add(teachersdetail);
 		teachersdetail.setFont(new Font("Arial", Font.BOLD, 32));
 		
-		JPanel information = new JPanel();
+		// Information Field
+		JFrame information = new JFrame();
 		information.setBounds(409, 138, 539, 395);
 		frame.getContentPane().add(information);
+		
+		
+		
+		
 		
 		JLabel lblusername = new JLabel("USERNAME");
 		lblusername.setForeground(Color.WHITE);
@@ -147,13 +156,88 @@ public class Ad_teacher {
 		btnadd.setFont(new Font("Arial", Font.BOLD, 18));
 		btnadd.setBounds(10, 488, 95, 45);
 		frame.getContentPane().add(btnadd);
-		
+		btnadd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String User_name = username.getText();
+				String Age = age.getText();
+				String Experience = experience.getText();
+				String Qualification = qualification.getText();
+				String Gender = gender.getText();
+				String Email_Id = email.getText();
+				String Contact = contact.getText();
+				String DOB = dob.getText();
+				
+				try {
+					
+					//1. Get a connection to database
+					Connection myConn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/login_n_register","root","karma16502@");
+
+					//2. Create a statement
+					Statement myStmt = myConn.createStatement();
+
+					//3. Execute SQL Query
+					String sql = "insert into tbl_teacher"
+							+"(username,age, experience, qualification,gender, email, contact,dob)"
+							+"values ('"+User_name+"', '"+Age+"', '"+Experience +"', '"+Qualification+"','"+Gender+"', '"+Email_Id+"','"+Contact+"', '"+DOB+"')";
+
+					myStmt.executeUpdate(sql);
+
+					System.out.println("Insert Completed");
+					JOptionPane.showMessageDialog(btnadd, "The Data is inserted successfully");
+					}
+					catch(Exception ex) {
+					ex.printStackTrace();
+					}
+
+			}
+		});
+		JButton btnNewButton = new JButton("");
+				
 		JButton btnupdate = new JButton("UPDATE");
 		btnupdate.setForeground(Color.WHITE);
 		btnupdate.setBackground(Color.BLACK);
 		btnupdate.setFont(new Font("Arial", Font.BOLD, 18));
 		btnupdate.setBounds(115, 488, 142, 45);
 		frame.getContentPane().add(btnupdate);
+		btnupdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String User_name = username.getText();
+				String Age = age.getText();
+				String Experience = experience.getText();
+				String Qualification = qualification.getText();
+		
+				String Email_Id = email.getText();
+				String Contact = contact.getText();
+				
+				try {
+					//1. Get a connection to database
+					Connection myConn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/login_n_register","root","karma16502@");
+
+					//2. Create a statement
+					Statement myStmt = myConn.createStatement();
+
+					//3. Execute SQL Query
+					String sql = "Update tbl_teacher"
+							+ " set age='"+Age+"' "
+							+ "set experience = '"+Experience+"'"
+							+ "set qualification = '"+Qualification+"'"
+							+ "set email = '"+Email_Id+"' "
+							+ "set contact= '"+Contact+"' "
+						    + " where username='"+User_name+"'";
+
+					myStmt.executeUpdate(sql);
+
+					System.out.println("Update Completed");
+					}
+					catch(Exception ex) {
+					ex.printStackTrace();
+					}
+
+				
+			}
+		});
+		
+		
 		
 		JButton btndelete = new JButton("DELETE");
 		btndelete.setForeground(Color.WHITE);
@@ -161,6 +245,8 @@ public class Ad_teacher {
 		btndelete.setFont(new Font("Arial", Font.BOLD, 18));
 		btndelete.setBounds(267, 488, 122, 45);
 		frame.getContentPane().add(btndelete);
+
+
 		
 		JLabel lblemail = new JLabel("EMAIL");
 		lblemail.setForeground(Color.WHITE);
@@ -190,6 +276,13 @@ public class Ad_teacher {
 		btnshowall.setFont(new Font("Arial", Font.BOLD, 18));
 		btnshowall.setBounds(794, 87, 154, 45);
 		frame.getContentPane().add(btnshowall);
+		btnshowall.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		
 		
 		JLabel lbldob = new JLabel("DOB");
 		lbldob.setForeground(Color.WHITE);
@@ -202,8 +295,8 @@ public class Ad_teacher {
 		frame.getContentPane().add(dob);
 		dob.setColumns(10);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnhome = new JButton("");
+		btnhome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Admin ad = new Admin();
 				ad.AdminScreen();
@@ -216,9 +309,9 @@ public class Ad_teacher {
 				
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\back.jpg"));
-		btnNewButton.setBounds(0, 0, 53, 52);
-		frame.getContentPane().add(btnNewButton);
+		btnhome.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\back.jpg"));
+		btnhome.setBounds(0, 0, 53, 52);
+		frame.getContentPane().add(btnhome);
 		
 		JLabel lblimage = new JLabel("");
 		lblimage.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\bak.png"));
