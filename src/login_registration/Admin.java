@@ -69,7 +69,7 @@ public class Admin {
 		JButton btnteacher = new JButton("TEACHER");
 		btnteacher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Teacher_test tc= new Teacher_test();
+				Ad_teacher tc= new Ad_teacher();
 				tc.Admin_TeacherScreen();
 				dispose_adminframe();
 			}

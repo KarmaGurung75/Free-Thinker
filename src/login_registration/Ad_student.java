@@ -29,7 +29,7 @@ public class Ad_student {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String [] arg) {
+	public static void Admin_StudentScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
