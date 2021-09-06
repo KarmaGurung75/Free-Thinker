@@ -263,7 +263,7 @@ public class Student_test {
 				String Roll_no = rollno.getText();
 				String Address = address.getText();
 				String Email_Id = email.getText();
-				String Contact_no = contact.getText();
+				String Contact = contact.getText();
 				String DOB = dob.getText();
 				
 				try {
@@ -274,7 +274,7 @@ public class Student_test {
 					Statement myStmt = myConn.createStatement();
 
 					//3. Execute SQL Query
-					String sql = "Update tbl_student set first_name = '"+First_name+"' , last_name = '"+Last_name+", age ='"+Age+"', gender = '"+Gender+"' ,roll_no = '"+Roll_no+"', address = '"+Address+"', email = '"+Email_Id+"', contact= '"+Contact_no+"', dob='"+DOB+"' where student_id='"+Student_ID+"' ";
+					String sql = " Update tbl_student set first_name = '"+First_name+"', last_name = '"+ Last_name+"', age = '"+Age+"', gender= '"+Gender+"', roll_no= '"+Roll_no+"', address='"+Address+"', email='"+Email_Id+"', contact = '"+Contact+"', dob='"+DOB+"' where student_id = '"+Student_ID+"' ";
 					myStmt.executeUpdate(sql);
 
 					JOptionPane.showMessageDialog(btnupdate,"Update Completed");
