@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
@@ -99,8 +100,8 @@ public class sector {
 		btnteacher.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\teacher.png"));
 		btnteacher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Teacher_login Tl = new Teacher_login();
-				Tl.setVisible(true);
+				Teacher_login TL = new Teacher_login();
+				TL.TeacherLogScreen();
 				dispose_frame();
 			}
 
@@ -140,7 +141,17 @@ public class sector {
 		JButton btnexit = new JButton("EXIT");
 		btnexit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				int opt=JOptionPane.showConfirmDialog(null,"Are you sure to Exit?","Exit",JOptionPane.YES_NO_OPTION);
+				//YES_NO_CANCEL_OPTION;
+				if (opt==0) {
+					dispose_frame();
+				}
+			}
+
+			private void dispose_frame() {
+				// TODO Auto-generated method stub
+				frame.dispose();
+				
 			}
 		});
 		btnexit.setForeground(new Color(255, 255, 255));

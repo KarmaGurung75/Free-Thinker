@@ -44,7 +44,7 @@ public class Admin {
 	 */
 	public void initialize() {
 		adminframe = new JFrame();
-		adminframe.setBounds(100, 100, 616, 446);
+		adminframe.setBounds(100, 100, 616, 440);
 		adminframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		adminframe.getContentPane().setLayout(null);
 		
@@ -64,7 +64,7 @@ public class Admin {
 		});
 		btnhome.setBounds(57, 10, 46, 48);
 		adminframe.getContentPane().add(btnhome);
-		btnhome.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\1.png"));
+		btnhome.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\Home2.png"));
 		
 		JButton btnteacher = new JButton("TEACHER");
 		btnteacher.addActionListener(new ActionListener() {
@@ -107,8 +107,8 @@ public class Admin {
 		adminframe.getContentPane().add(btnstaff);
 		
 		JLabel page = new JLabel("");
-		page.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\BG.png"));
-		page.setBounds(0, 0, 602, 409);
+		page.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\Admin_cover.png"));
+		page.setBounds(0, 0, 602, 410);
 		adminframe.getContentPane().add(page);
 	}
 	public JButton getBtnNewButton() {
