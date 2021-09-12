@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Window;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,7 +32,7 @@ private JTextField tf_Marks;
 public Teacher_Pg() {
 
 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-setBounds(0, 0, 1200, 730);
+setBounds(0, 0, 1143, 654);
 
 mainw_contentPane = new JPanel();
 mainw_contentPane.setBackground(Color.WHITE);
@@ -40,7 +41,7 @@ setContentPane(mainw_contentPane);
 mainw_contentPane.setLayout(null);
 
 JTabbedPane p_m_sd_tPane = new JTabbedPane(JTabbedPane.TOP);
-p_m_sd_tPane.setBounds(29, 104, 1123, 561);
+p_m_sd_tPane.setBounds(5, 56, 1123, 561);
 p_m_sd_tPane.setBorder(null);
 p_m_sd_tPane.setBackground(Color.WHITE);
 mainw_contentPane.add(p_m_sd_tPane);
@@ -61,10 +62,10 @@ profile_pane.add(profile_panel);
 profile_panel.setLayout(null);
 
 JLabel lblNewLabel = new JLabel("TEACHER PAGE");
-lblNewLabel.setBounds(469, 32, 270, 61);
-lblNewLabel.setFont(new Font("Arial Black", Font.BOLD, 26));
+lblNewLabel.setBounds(299, 10, 340, 61);
+lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 40));
 lblNewLabel.setBackground(new Color(0, 0, 0));
-lblNewLabel.setForeground(new Color(255, 218, 185));
+lblNewLabel.setForeground(Color.WHITE);
 mainw_contentPane.add(lblNewLabel);
 
 
@@ -524,7 +525,13 @@ Module_panel.add(btnClear);
 JButton btnMexit = new JButton("EXIT");
 btnMexit.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent e) {
-		System.exit(0);	
+		int opt=JOptionPane.showConfirmDialog(null,"Are you sure to Exit?","Exit",JOptionPane.YES_NO_OPTION);
+		//YES_NO_CANCEL_OPTION;
+		if (opt==0) {
+			JComponent comp = (JComponent) e.getSource();
+			  Window win = SwingUtilities.getWindowAncestor(comp);
+			  win.dispose();
+		}
 	}
 });
 btnMexit.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\exit1.png"));
@@ -853,14 +860,6 @@ lbl_teacherid_1_6_1.setForeground(Color.WHITE);
 lbl_teacherid_1_6_1.setFont(new Font("Arial", Font.BOLD, 16));
 lbl_teacherid_1_6_1.setBounds(93, 384, 111, 44);
 SD_lpane.add(lbl_teacherid_1_6_1);
-
-
-//------------------------------------------------------ Background Images ---------------------------------------------------------------
-
-   JLabel main_bgimage = new JLabel("");
-   main_bgimage.setIcon(new ImageIcon("D:\\bg_img1.jpg"));
-   main_bgimage.setBounds(0, 0, 1147, 661);
-   mainw_contentPane.add(main_bgimage);
 JScrollPane scrollPane = new JScrollPane();
 scrollPane.setBounds(382, 29, 705, 424);
 profile_panel.add(scrollPane);
@@ -898,7 +897,13 @@ scrollPane.setViewportView(table);
 JButton btnExit = new JButton("Exit");
 btnExit.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent e) {
-		System.exit(0);		
+		int opt=JOptionPane.showConfirmDialog(null,"Are you sure to Exit?","Exit",JOptionPane.YES_NO_OPTION);
+		//YES_NO_CANCEL_OPTION;
+		if (opt==0) {
+			JComponent comp = (JComponent) e.getSource();
+			  Window win = SwingUtilities.getWindowAncestor(comp);
+			  win.dispose();
+		}
 	}
 	
 });
@@ -961,7 +966,7 @@ profile_panel.add(lblbg);
 JLabel p_bgimage = new JLabel("");
 p_bgimage.setForeground(new Color(255, 255, 255));
 p_bgimage.setIcon(new ImageIcon("D:\\bg_img1.jpg"));
-p_bgimage.setBounds(0, 0, 1097, 525);
+p_bgimage.setBounds(-14, -14, 1111, 539);
 profile_panel.add(p_bgimage);
 
 
@@ -1012,7 +1017,13 @@ SD_lpane.add(btn_clear);
 JButton btn_exit = new JButton("EXIT");
 btn_exit.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent e) {
-		System.exit(0);	
+		int opt=JOptionPane.showConfirmDialog(null,"Are you sure to Exit?","Exit",JOptionPane.YES_NO_OPTION);
+		//YES_NO_CANCEL_OPTION;
+		if (opt==0) {
+			JComponent comp = (JComponent) e.getSource();
+			  Window win = SwingUtilities.getWindowAncestor(comp);
+			  win.dispose();
+		}
 	}
 });
 btn_exit.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\exit1.png"));
@@ -1024,14 +1035,45 @@ JLabel sd_bgimg = new JLabel("");
 sd_bgimg.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\bg img 11.jpg"));
 sd_bgimg.setBounds(10, 10, 1098, 514);
 SD_lpane.add(sd_bgimg);
+JButton btnNewButton = new JButton("");
+btnNewButton.setBackground(Color.WHITE);
+btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
+btnNewButton.setBounds(5, 0, 65, 35);
+mainw_contentPane.add(btnNewButton);
+btnNewButton.addActionListener(new ActionListener() {
+	public void actionPerformed(ActionEvent e) {
+		sector st = new sector();
+		st.SectorScreen();
+		JComponent comp = (JComponent) e.getSource();
+		  Window win = SwingUtilities.getWindowAncestor(comp);
+		  win.dispose();
+	}
+});
+btnNewButton.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\home1.png"));
+btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
+
+
+//------------------------------------------------------ Background Images ---------------------------------------------------------------
+
+   JLabel main_bgimage = new JLabel("");
+   main_bgimage.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\bg_img1.jpg"));
+   main_bgimage.setBounds(5, -11, 1147, 661);
+   mainw_contentPane.add(main_bgimage);
 
 }
 
 
 
-public static void TeacherScreen() {
+public static void main(String [] args) {
 Teacher_Pg frame = new Teacher_Pg();
 frame.setVisible(true);
 frame.setResizable(false);
+}
+
+
+
+public void setVisible() {
+	// TODO Auto-generated method stub
+	
 }
 }

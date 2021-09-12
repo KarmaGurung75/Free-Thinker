@@ -149,7 +149,7 @@ private void initialize() {
                if (rs.next()) {
             	   JOptionPane.showMessageDialog(btnlogin, "You have successfully logged in");
               		 Teacher_Pg TR= new Teacher_Pg();
-              		 TR.TeacherScreen();
+              		 TR.setVisible(true);
               		 dispose_Teacher_login();     	        
                }
                else {

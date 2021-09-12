@@ -39,13 +39,14 @@ public class Student_Pg {
     private JLabel lbl_pro_bg;
     private JLabel lbl_mo_bg;
     private JLabel lbl_res_bg;
+    private JButton btnNewButton;
     
     public Student_Pg() {
         f=new JFrame("Student"); 
         f.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\bg img 11.jpg"));
         
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        tabbedPane.setBounds(-4, 51, 967, 489);
+        tabbedPane.setBounds(6, 51, 967, 489);
         f.getContentPane().add(tabbedPane);
         
         pnl_profile = new JPanel();
@@ -338,7 +339,7 @@ public class Student_Pg {
         
         lbl_pro_bg = new JLabel("New label");
         lbl_pro_bg.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\bg img 11.jpg"));
-        lbl_pro_bg.setBounds(-10, -3, 962, 462);
+        lbl_pro_bg.setBounds(0, -3, 971, 462);
         pnl_profile.add(lbl_pro_bg);
         
         pnl_module = new JPanel();
@@ -446,6 +447,17 @@ public class Student_Pg {
         pnl_module.add(btnShow);
         
         JButton btnClear = new JButton("CLEAR");
+        btnClear.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		txt_M_ID.setText("");
+        		txt_Mname.setText("");
+        		txt_credit.setText("");
+        		txt_resources.setText("");
+        		((DefaultTableModel)M_table.getModel()).setNumRows(0); // delet all table row
+        		
+        		
+        	}
+        });
         btnClear.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\clear1.png"));
         btnClear.setFont(new Font("Tahoma", Font.BOLD, 16));
         btnClear.setBounds(646, 407, 129, 45);
@@ -569,7 +581,7 @@ public class Student_Pg {
           layeredPane.setBounds(32, 183, 172, -65);
           f.getContentPane().add(layeredPane);
         
-        f.setSize(977, 577);
+        f.setSize(991, 577);
          f.getContentPane().setLayout(null);
          
           
@@ -580,15 +592,37 @@ public class Student_Pg {
                  lbl_title.setFont(new Font("Times New Roman", Font.BOLD, 38));
                  lbl_title.setForeground(Color.BLACK);
                  
+                 btnNewButton = new JButton("");
+                 btnNewButton.setBounds(6, 0, 44, 43);
+                 f.getContentPane().add(btnNewButton);
+                 btnNewButton.addActionListener(new ActionListener() {
+                 	public void actionPerformed(ActionEvent e) {
+                 		sector st = new sector();
+				st.SectorScreen();
+				dipose_f();
+			}
+
+			private void dipose_f() {
+				// TODO Auto-generated method stub
+			    f.dispose();
+			}
+                 });
+                 btnNewButton.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\home1.png"));
+                 
                  lbl_bg = new JLabel("");
                  lbl_bg.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\bg img 11.jpg"));
-                 lbl_bg.setBounds(-14, -25, 977, 555);
+                 lbl_bg.setBounds(6, -25, 967, 565);
                  f.getContentPane().add(lbl_bg);
          f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          f.setVisible(true);
     }
     
-    public static void main(String[] args) {
+    public static void main(String [] args) {
         new Student_Pg();
     }
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 }
