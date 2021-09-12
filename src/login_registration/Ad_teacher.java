@@ -17,7 +17,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
-import java.util.Vector;
 import java.awt.event.MouseAdapter;
 import javax.swing.JScrollPane;
 
@@ -41,7 +40,7 @@ public class Ad_teacher{
 	/**
 	 * Launch the application.
 	 */
-	public static void Admin_TeacherScreen() {
+	public static void Admin_TeacherScreen(){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -184,6 +183,7 @@ public class Ad_teacher{
 
 					myStmt.executeUpdate(sql);
 					JOptionPane.showMessageDialog(btnadd, "The Data is inserted successfully");
+					((DefaultTableModel)table.getModel()).setNumRows(0); // delet all table row
 					}
 					catch(Exception ex) {
 					ex.printStackTrace();
@@ -359,11 +359,18 @@ public class Ad_teacher{
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				sector ad = new sector();
-				ad.SectorScreen();
+				Admin ad = new Admin();
+				ad.AdminScreen();
+				dispose_frame();
+			}
+
+			private void dispose_frame() {
+				// TODO Auto-generated method stub
+				frame.dispose();
+				
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\dell\\OneDrive\\Pictures\\back.jpg"));
+		btnNewButton.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\backbtn.png"));
 		btnNewButton.setBounds(0, 0, 53, 52);
 		frame.getContentPane().add(btnNewButton);
 		
@@ -402,18 +409,32 @@ public class Ad_teacher{
 		frame.getContentPane().add(teacherid_txt);
 		teacherid_txt.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("EXIT");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnExit = new JButton("EXIT");
+		btnExit.setBackground(Color.BLACK);
+		btnExit.setForeground(Color.WHITE);
+		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//System.exit(0);
+				int opt=JOptionPane.showConfirmDialog(null,"Are you sure to Exit?","Exit",JOptionPane.YES_NO_OPTION);
+				//YES_NO_CANCEL_OPTION;
+				if (opt==0) {
+					dispose_frame();
+				}
+			}
+
+			private void dispose_frame() {
+				// TODO Auto-generated method stub
+				frame.dispose();
+				
 			}
 		});
-		btnNewButton_1.setForeground(Color.WHITE);
-		btnNewButton_1.setFont(new Font("Arial", Font.BOLD, 18));
-		btnNewButton_1.setBounds(975, 588, 85, 37);
-		frame.getContentPane().add(btnNewButton_1);
+		btnExit.setForeground(Color.WHITE);
+		btnExit.setFont(new Font("Arial", Font.BOLD, 18));
+		btnExit.setBounds(1050, 588, 85, 37);
+		frame.getContentPane().add(btnExit);
 		
-		JButton btnreset = new JButton("RESET");
-		btnreset.addActionListener(new ActionListener() {
+		JButton btnclear = new JButton("CLEAR");
+		btnclear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				teacherid_txt.setText("");
 				first_name_txt.setText("");
@@ -426,21 +447,27 @@ public class Ad_teacher{
 				email.setText("");
 				contact.setText("");
 				dob.setText("");
+				((DefaultTableModel)table.getModel()).setNumRows(0); // delet all table row
 				
 			
 				
 			}
 		});
-		btnreset.setBackground(Color.WHITE);
-		btnreset.setFont(new Font("Arial", Font.BOLD, 17));
-		btnreset.setBounds(409, 590, 136, 43);
-		frame.getContentPane().add(btnreset);
+		btnclear.setBackground(Color.BLACK);
+		btnclear.setForeground(Color.WHITE);
+		btnclear.setFont(new Font("Arial", Font.BOLD, 17));
+		btnclear.setBounds(409, 590, 136, 43);
+		frame.getContentPane().add(btnclear);
 		
 		JScrollPane scrollPane = new JScrollPane();
+		//scrollPane.setBackground(Color.BLACK);
+		//scrollPane.setForeground(Color.WHITE);
 		scrollPane.setBounds(363, 144, 787, 434);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
+		table.setBackground(Color.BLACK);
+		table.setForeground(Color.WHITE);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -478,6 +505,11 @@ public class Ad_teacher{
 		table.getColumnModel().getColumn(9).setPreferredWidth(80);
 		table.getColumnModel().getColumn(10).setPreferredWidth(70);
 		scrollPane.setViewportView(table);
+		
+		JLabel page = new JLabel("");
+		page.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\main_cover1.png"));
+		page.setBounds(0, 0,1233, 740);
+		frame.getContentPane().add(page);
 		
 		
 	}

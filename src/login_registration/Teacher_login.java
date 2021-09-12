@@ -19,7 +19,7 @@ public class Teacher_login {
 	/**
 	 * * Launch the application.
 	 * */
-	public static void main(String[] args) {
+	public static void TeacherLogScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
           try {
@@ -148,8 +148,8 @@ private void initialize() {
                ResultSet rs = st.executeQuery();
                if (rs.next()) {
             	   JOptionPane.showMessageDialog(btnlogin, "You have successfully logged in");
-              		 Teacher TR= new Teacher();
-              		 TR.setVisible(true);
+              		 Teacher_Pg TR= new Teacher_Pg();
+              		 TR.TeacherScreen();
               		 dispose_Teacher_login();     	        
                }
                else {

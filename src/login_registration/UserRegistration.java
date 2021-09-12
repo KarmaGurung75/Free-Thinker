@@ -225,7 +225,7 @@ public class UserRegistration extends JFrame {
                       		 dispose_UserRegistration(); 
                         }
                         else if (Sector.equalsIgnoreCase("Teacher")) {
-                        	Teacher TR= new Teacher();
+                        	Teacher_Pg TR= new Teacher_Pg();
                         	TR.TeacherScreen();
                         	dispose_UserRegistration(); 
                        }
