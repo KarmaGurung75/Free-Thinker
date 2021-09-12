@@ -68,7 +68,7 @@ public class Ad_student {
 		frmStudent = new JFrame();
 		frmStudent.getContentPane().setBackground(new Color(255, 153, 255));
 		frmStudent.setTitle("student");
-		frmStudent.setBounds(100, 100, 982, 586);
+		frmStudent.setBounds(100, 100, 982, 593);
 		frmStudent.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmStudent.getContentPane().setLayout(null);
 		
@@ -92,6 +92,7 @@ public class Ad_student {
 		frmStudent.getContentPane().add(btnback);
 		
 		JButton btnexit = new JButton("EXIT");
+		btnexit.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\exit1.png"));
 		btnexit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int opt=JOptionPane.showConfirmDialog(null,"Are you sure to Exit?","Exit",JOptionPane.YES_NO_OPTION);
@@ -110,7 +111,7 @@ public class Ad_student {
 		btnexit.setForeground(new Color(255, 255, 255));
 		btnexit.setBackground(new Color(0, 0, 0));
 		btnexit.setFont(new Font("Arial", Font.BOLD, 14));
-		btnexit.setBounds(878, 512, 85, 35);
+		btnexit.setBounds(859, 512, 104, 35);
 		frmStudent.getContentPane().add(btnexit);
 		
 		JLabel student_management = new JLabel("STUDENT MANAGEMENT");
@@ -222,6 +223,7 @@ public class Ad_student {
 		
 		// Add Button
 		JButton btnadd = new JButton("ADD");
+		btnadd.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\add.png"));
 		btnadd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Student_ID = Studentid.getText();
@@ -261,10 +263,11 @@ public class Ad_student {
 		btnadd.setForeground(Color.WHITE);
 		btnadd.setBackground(Color.BLACK);
 		btnadd.setFont(new Font("Arial", Font.BOLD, 16));
-		btnadd.setBounds(10, 511, 97, 35);
+		btnadd.setBounds(10, 511, 112, 35);
 		frmStudent.getContentPane().add(btnadd);
 		
 		JButton btnupdate = new JButton("UPDATE");
+		btnupdate.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\update.png"));
 		btnupdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Student_ID = Studentid.getText();
@@ -301,10 +304,11 @@ public class Ad_student {
 		btnupdate.setForeground(Color.WHITE);
 		btnupdate.setBackground(Color.BLACK);
 		btnupdate.setFont(new Font("Arial", Font.BOLD, 16));
-		btnupdate.setBounds(117, 511, 124, 35);
+		btnupdate.setBounds(138, 511, 139, 35);
 		frmStudent.getContentPane().add(btnupdate);
 		
 		JButton btndelete = new JButton("DELETE");
+		btndelete.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\delete.png"));
 		btndelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -336,10 +340,11 @@ public class Ad_student {
 		btndelete.setForeground(Color.WHITE);
 		btndelete.setBackground(Color.BLACK);
 		btndelete.setFont(new Font("Arial", Font.BOLD, 16));
-		btndelete.setBounds(253, 511, 97, 35);
+		btndelete.setBounds(295, 511, 147, 35);
 		frmStudent.getContentPane().add(btndelete);
 		
 		JButton btnshowall = new JButton("SHOW ALL");
+		btnshowall.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\display.png"));
 		btnshowall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -385,7 +390,7 @@ public class Ad_student {
 		btnshowall.setForeground(new Color(255, 255, 255));
 		btnshowall.setBackground(new Color(0, 0, 0));
 		btnshowall.setFont(new Font("Arial", Font.BOLD, 18));
-		btnshowall.setBounds(470, 511, 147, 35);
+		btnshowall.setBounds(591, 511, 176, 35);
 		frmStudent.getContentPane().add(btnshowall);
 		
 		Studentid = new JTextField();
@@ -401,6 +406,7 @@ public class Ad_student {
 		frmStudent.getContentPane().add(lblsID);
 		
 		JButton btnClear = new JButton("Clear");
+		btnClear.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\clear1.png"));
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Studentid.setText("");
@@ -418,7 +424,7 @@ public class Ad_student {
 		btnClear.setBackground(Color.BLACK);
 		btnClear.setForeground(Color.WHITE);
 		btnClear.setFont(new Font("Arial", Font.BOLD, 16));
-		btnClear.setBounds(363, 511, 97, 35);
+		btnClear.setBounds(462, 511, 119, 35);
 		frmStudent.getContentPane().add(btnClear);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -428,7 +434,7 @@ public class Ad_student {
 		frmStudent.getContentPane().add(scrollPane);
 		
 		table = new JTable();
-		table.setBackground(Color.BLACK);
+		table.setBackground(Color.WHITE);
 		table.setForeground(Color.WHITE);
 		table.addMouseListener(new MouseAdapter() {
 			@Override

@@ -154,6 +154,7 @@ public class Ad_teacher{
 		frame.getContentPane().add(lblgender);
 		
 		JButton btnadd = new JButton("ADD");
+		btnadd.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\add.png"));
 		btnadd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Teacher_ID = teacherid_txt.getText();
@@ -194,11 +195,12 @@ public class Ad_teacher{
 		btnadd.setForeground(Color.WHITE);
 		btnadd.setBackground(Color.BLACK);
 		btnadd.setFont(new Font("Arial", Font.BOLD, 18));
-		btnadd.setBounds(10, 588, 95, 45);
+		btnadd.setBounds(10, 588, 136, 45);
 		frame.getContentPane().add(btnadd);
 		
 		// Update
 		JButton btnupdate = new JButton("UPDATE");
+		btnupdate.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\update.png"));
 		btnupdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Teacher_ID = teacherid_txt.getText();
@@ -241,10 +243,11 @@ public class Ad_teacher{
 		btnupdate.setForeground(Color.WHITE);
 		btnupdate.setBackground(Color.BLACK);
 		btnupdate.setFont(new Font("Arial", Font.BOLD, 18));
-		btnupdate.setBounds(115, 588, 142, 45);
+		btnupdate.setBounds(164, 588, 165, 45);
 		frame.getContentPane().add(btnupdate);
 		
 		JButton btndelete = new JButton("DELETE");
+		btndelete.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\delete.png"));
 		btndelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Teacher_ID = teacherid_txt.getText();
@@ -273,7 +276,7 @@ public class Ad_teacher{
 		btndelete.setForeground(Color.WHITE);
 		btndelete.setBackground(Color.BLACK);
 		btndelete.setFont(new Font("Arial", Font.BOLD, 18));
-		btndelete.setBounds(267, 588, 122, 45);
+		btndelete.setBounds(351, 588, 143, 45);
 		frame.getContentPane().add(btndelete);
 		
 		JLabel lblemail = new JLabel("EMAIL");
@@ -299,6 +302,7 @@ public class Ad_teacher{
 		contact.setColumns(10);
 		
 		JButton btnshowall = new JButton("SHOW ALL");
+		btnshowall.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\display.png"));
 		btnshowall.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -342,7 +346,7 @@ public class Ad_teacher{
 		btnshowall.setBackground(Color.BLACK);
 		btnshowall.setForeground(Color.WHITE);
 		btnshowall.setFont(new Font("Arial", Font.BOLD, 18));
-		btnshowall.setBounds(607, 588, 136, 45);
+		btnshowall.setBounds(662, 588, 197, 45);
 		frame.getContentPane().add(btnshowall);
 		
 		JLabel lbldob = new JLabel("DOB");
@@ -410,6 +414,7 @@ public class Ad_teacher{
 		teacherid_txt.setColumns(10);
 		
 		JButton btnExit = new JButton("EXIT");
+		btnExit.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\exit1.png"));
 		btnExit.setBackground(Color.BLACK);
 		btnExit.setForeground(Color.WHITE);
 		btnExit.addActionListener(new ActionListener() {
@@ -430,10 +435,11 @@ public class Ad_teacher{
 		});
 		btnExit.setForeground(Color.WHITE);
 		btnExit.setFont(new Font("Arial", Font.BOLD, 18));
-		btnExit.setBounds(1050, 588, 85, 37);
+		btnExit.setBounds(1035, 590, 115, 41);
 		frame.getContentPane().add(btnExit);
 		
 		JButton btnclear = new JButton("CLEAR");
+		btnclear.setIcon(new ImageIcon("C:\\java_folder\\Free_Thinker_project\\src\\login_registration\\icon\\clear1.png"));
 		btnclear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				teacherid_txt.setText("");
@@ -456,7 +462,7 @@ public class Ad_teacher{
 		btnclear.setBackground(Color.BLACK);
 		btnclear.setForeground(Color.WHITE);
 		btnclear.setFont(new Font("Arial", Font.BOLD, 17));
-		btnclear.setBounds(409, 590, 136, 43);
+		btnclear.setBounds(504, 589, 136, 43);
 		frame.getContentPane().add(btnclear);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -466,7 +472,7 @@ public class Ad_teacher{
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
-		table.setBackground(Color.BLACK);
+		table.setBackground(Color.WHITE);
 		table.setForeground(Color.WHITE);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
