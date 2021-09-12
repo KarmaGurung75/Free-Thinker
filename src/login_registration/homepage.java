@@ -42,6 +42,7 @@ public class homepage {
         text.setFont(new Font("Arial", Font.PLAIN, 16));
         text.setForeground(Color.RED);
         text.setBounds(40, 90, 600, 70);
+        text.setEditable(false);
         f.add(text);
 
         

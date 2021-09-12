@@ -149,8 +149,8 @@ private void initialize() {
                ResultSet rs = st.executeQuery();
                if (rs.next()) {
             	   JOptionPane.showMessageDialog(btnlogin, "You have successfully logged in");
-              		 Student ST= new Student();
-              		 ST.StudentScreen();
+              		 Student_Pg SP= new Student_Pg();
+              		 SP.setVisible(true);
               		 dispose_Student_login();    	        
                }
                else {
