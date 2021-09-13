@@ -111,7 +111,7 @@ public class Ad_student {
 		btnexit.setForeground(new Color(255, 255, 255));
 		btnexit.setBackground(new Color(0, 0, 0));
 		btnexit.setFont(new Font("Arial", Font.BOLD, 14));
-		btnexit.setBounds(859, 512, 104, 35);
+		btnexit.setBounds(859, 505, 104, 41);
 		frmStudent.getContentPane().add(btnexit);
 		
 		JLabel student_management = new JLabel("STUDENT MANAGEMENT");
@@ -263,7 +263,7 @@ public class Ad_student {
 		btnadd.setForeground(Color.WHITE);
 		btnadd.setBackground(Color.BLACK);
 		btnadd.setFont(new Font("Arial", Font.BOLD, 16));
-		btnadd.setBounds(10, 511, 112, 35);
+		btnadd.setBounds(10, 505, 112, 41);
 		frmStudent.getContentPane().add(btnadd);
 		
 		JButton btnupdate = new JButton("UPDATE");
@@ -304,7 +304,7 @@ public class Ad_student {
 		btnupdate.setForeground(Color.WHITE);
 		btnupdate.setBackground(Color.BLACK);
 		btnupdate.setFont(new Font("Arial", Font.BOLD, 16));
-		btnupdate.setBounds(138, 511, 139, 35);
+		btnupdate.setBounds(132, 504, 139, 41);
 		frmStudent.getContentPane().add(btnupdate);
 		
 		JButton btndelete = new JButton("DELETE");
@@ -340,7 +340,7 @@ public class Ad_student {
 		btndelete.setForeground(Color.WHITE);
 		btndelete.setBackground(Color.BLACK);
 		btndelete.setFont(new Font("Arial", Font.BOLD, 16));
-		btndelete.setBounds(295, 511, 147, 35);
+		btndelete.setBounds(281, 504, 147, 41);
 		frmStudent.getContentPane().add(btndelete);
 		
 		JButton btnshowall = new JButton("SHOW ALL");
@@ -390,7 +390,7 @@ public class Ad_student {
 		btnshowall.setForeground(new Color(255, 255, 255));
 		btnshowall.setBackground(new Color(0, 0, 0));
 		btnshowall.setFont(new Font("Arial", Font.BOLD, 18));
-		btnshowall.setBounds(591, 511, 176, 35);
+		btnshowall.setBounds(567, 504, 176, 41);
 		frmStudent.getContentPane().add(btnshowall);
 		
 		Studentid = new JTextField();
@@ -424,17 +424,17 @@ public class Ad_student {
 		btnClear.setBackground(Color.BLACK);
 		btnClear.setForeground(Color.WHITE);
 		btnClear.setFont(new Font("Arial", Font.BOLD, 16));
-		btnClear.setBounds(462, 511, 119, 35);
+		btnClear.setBounds(438, 504, 119, 41);
 		frmStudent.getContentPane().add(btnClear);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		//scrollPane.setBackground(Color.BLACK);
 		//scrollPane.setForeground(Color.WHITE);
-		scrollPane.setBounds(360, 98, 603, 403);
+		scrollPane.setBounds(360, 98, 603, 396);
 		frmStudent.getContentPane().add(scrollPane);
 		
 		table = new JTable();
-		table.setBackground(Color.WHITE);
+		table.setBackground(Color.BLACK);
 		table.setForeground(Color.WHITE);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
@@ -453,7 +453,7 @@ public class Ad_student {
 				dob.setText(RecordTable.getValueAt(SelectedRows, 9).toString());
 			}
 		});
-		table.setFillsViewportHeight(false);
+		table.setFillsViewportHeight(true);
 		table.setFont(new Font("Arial", Font.BOLD, 14));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {

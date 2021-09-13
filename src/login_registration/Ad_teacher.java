@@ -472,7 +472,7 @@ public class Ad_teacher{
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
-		table.setBackground(Color.WHITE);
+		table.setBackground(Color.BLACK);
 		table.setForeground(Color.WHITE);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
@@ -492,7 +492,7 @@ public class Ad_teacher{
 							dob.setText(RecordTable.getValueAt(SelectedRows, 10).toString());
 			}
 		});
-		table.setFillsViewportHeight(false);
+		table.setFillsViewportHeight(true);
 		table.setFont(new Font("Arial", Font.BOLD, 14));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
