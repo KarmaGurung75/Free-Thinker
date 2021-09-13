@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 class TestLogin {
 
 	@Test
+	// login test pass
 	void test() {
 		String username ="karma123";
 		String pass = "karmagrg";
@@ -19,4 +20,19 @@ class TestLogin {
 		assertEquals(true,result);
 
 	}
+	
+
+	@Test
+	// login test fail
+	void test1() {
+		String username ="karma123";
+		String pass = "sonam";
+		
+		login_test l = new login_test();
+		boolean result = l.userLogin(username, pass);
+		
+		assertEquals(true,result);
+
+	}
+
 }
