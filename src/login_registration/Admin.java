@@ -114,4 +114,9 @@ public class Admin {
 	public JButton getBtnNewButton() {
 		return btnhome;
 	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 }

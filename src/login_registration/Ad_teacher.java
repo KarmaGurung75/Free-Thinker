@@ -492,7 +492,7 @@ public class Ad_teacher{
 							dob.setText(RecordTable.getValueAt(SelectedRows, 10).toString());
 			}
 		});
-		table.setFillsViewportHeight(true);
+		table.setFillsViewportHeight(false);
 		table.setFont(new Font("Arial", Font.BOLD, 14));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
