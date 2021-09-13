@@ -453,7 +453,7 @@ public class Ad_student {
 				dob.setText(RecordTable.getValueAt(SelectedRows, 9).toString());
 			}
 		});
-		table.setFillsViewportHeight(true);
+		table.setFillsViewportHeight(false);
 		table.setFont(new Font("Arial", Font.BOLD, 14));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
