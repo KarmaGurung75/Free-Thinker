@@ -1,0 +1,99 @@
+create database login_n_register;
+use login_n_register;
+
+
+///////////////////////  Registration Table //////////////////////////
+CREATE TABLE registration
+( first_name varchar(250) NOT NULL,
+  last_name varchar(250) NOT NULL,
+  user_name varchar(250) NOT NULL unique,
+  password varchar(250) not null,
+  email_id varchar(250) NOT NULL,
+  mobile_number varchar(250) NOT NULL,
+  Sector varchar(50) not null,
+  constraint fk_sector foreign key (Sector) references tbl_sector (Sector)
+);
+select * from registration;
+//////////////////////////////////////////////////////////////////////
+
+////////////////////////  Sector Table /////////////////////////////////
+create table tbl_sector(
+    Sector varchar(50) not null,
+    constraint pk_sector primary key(Sector)
+);
+
+insert into tbl_sector values("Admin");
+insert into tbl_sector values("Teacher");
+insert into tbl_sector values("Student");
+
+select * from tbl_sector;
+/////////////////////////////////////////////////////////////////////////
+
+
+################################### Teacher Table Database ####################
+
+create table tbl_teacher(
+        teacherid int not null unique,
+        first_name varchar(50) not null,
+        last_name varchar(50) not null,
+        username varchar(50) not null,
+        age int not null,
+        experience varchar(50) not null,
+        qualification varchar(50) not null,
+        gender varchar(50) not null,
+        email varchar(50) not null,
+        contact int not null,
+        dob varchar(50) not null
+	);
+    
+    select * from tbl_teacher;
+    drop table tbl_teacher;
+    ###########################################################################
+
+
+################################ Student Table Database ########################
+    create table tbl_student(
+           student_id int not null unique,
+           first_name varchar(50) not null,
+           last_name varchar(50) not null,
+           age int not null,
+           gender varchar(50) not null,
+           roll_no int not null,
+           address varchar(50) not null,
+           email varchar(50) not null,
+           contact int not null,
+           dob varchar(50) not null
+    );
+    
+    select * from tbl_student;
+    drop table tbl_student;
+    ###########################################################################
+
+############################# Module Table Database ############################
+    create table tbl_module(
+          module_id int not null unique,
+          module_name varchar(50) not null,
+          marks int not null,
+          Description varchar(500) not null
+    );
+    select * from tbl_module;
+##############################################################################
+
+############################# Student Result Database ###########################
+    create table student_result(
+        student_id int not null,
+        Student_name varchar(50) not null,
+        module_id int not null,
+        module_name varchar(50) not null,
+        Result varchar(50) not null,
+        percentage int not null
+          
+    );
+    
+select * from student_result;
+##################################################################################    
+    
+
+
+
+
